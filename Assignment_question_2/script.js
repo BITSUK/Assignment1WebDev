@@ -82,7 +82,7 @@ function ValidateInput() {
     var Option3 = document.getElementById("uppercase");
     var Option4 = document.getElementById("symbols");
 
-    if ((Option1.checked == false) & (Option2.checked == false) & (Option3.checked == false) & (Option3.checked == false)) {
+    if ((Option1.checked == false) & (Option2.checked == false) & (Option3.checked == false) & (Option4.checked == false)) {
         document.getElementById("numbers").checked = true;
     }
 
