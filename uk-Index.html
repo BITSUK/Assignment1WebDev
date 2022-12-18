@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Password Generator by GR4</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Icon Link for Icons -->
+    <script src="script.js" defer></script>
+
+</head>
+<body onload="generatePassword()">
+<div class="container">
+    <h2>Password Generator</h2>
+    <div class="wrapper">
+        <div class="input-box">
+            <input type="text" disabled>
+            <span>
+                <button class="generate-btn"><img class="image" src="images/refresh-icon.png"></button>
+            </span>
+        </div>
+        <button class="copy-btn">Copy</button>
+
+        <div class="pass-indicator"></div>
+        <div class="pass-length">
+            <div class="details">
+                <label class="title">Password Length</label>
+                <span></span>
+            </div>
+            <input type="range" min="1" max="30" value="15" step="1">
+        </div>
+
+        <div class="pass-settings">
+            <label class="title">Options</label>
+
+            <ul class="options" id="box">
+                <li class="option">
+                    <input type="checkbox" id="numbers" checked onclick="ValidateInput()">
+                    <label for="numbers">0-9</label>
+                </li>
+                <li class="option">
+                    <input type="checkbox" id="lowercase" onclick="ValidateInput()">
+                    <label for="lowercase">a-z</label>
+                </li>
+                <li class="option">
+                    <input type="checkbox" id="uppercase" onclick="ValidateInput()">
+                    <label for="uppercase">A-Z</label>
+                </li>
+                <li class="option">
+                    <input type="checkbox" id="symbols" onclick="ValidateInput()">
+                    <label for="symbols">%@#</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
