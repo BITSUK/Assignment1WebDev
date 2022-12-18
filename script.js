@@ -4,6 +4,7 @@ copyIcon = document.querySelector(".copy-btn"),
 passwordInput = document.querySelector(".input-box input"),
 passIndicator = document.querySelector(".pass-indicator"),
 generateBtn = document.querySelector(".generate-btn");
+iconImage = document.querySelector(".image");
 
 const characters = { // object of letters, numbers & symbols
     lowercase: "abcdefghijklmnopqrstuvwxyz",
@@ -19,6 +20,11 @@ const generatePassword = () => {
     excludeDuplicate = false,
     passLength = lengthSlider.value;
    
+    //** Umesh : image animation */
+    iconImage.style.transform = "rotate(90deg)";
+    setTimeout(() => {iconImage.style.transform = "rotate(0deg)",5000});
+    //** End */
+
     options.forEach(option => { // looping through each option's checkbox
         if(option.checked) { // if checkbox is checked
             // if checkbox id isn't exc-duplicate && spaces
@@ -58,7 +64,7 @@ updateSlider();
 const CopyPassword = () => {
     navigator.clipboard.writeText(passwordInput.value); // copying random password
     copyIcon.innerText = "COPIED"; // changing copy icon to tick
-    copyIcon.style.color = "#4285F4";
+    copyIcon.style.color = "#00ff00";
     
     const timeoutPointer = setTimeout(() => { // after 500 ms, changing tick icon back to copy
                                                 copyIcon.innerText = "COPY";

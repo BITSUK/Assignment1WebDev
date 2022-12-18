@@ -117,7 +117,7 @@ body{
   color: #2c2d2e;
   padding-left: 0.63rem;
 }
-.wrapper .generate-btn{
+.wrapper .generate-btn {
   width: 0%;
   color: #fff;
   border: none;
@@ -131,7 +131,7 @@ body{
 }
 
 .wrapper .generate-btn img{
-    width: 70px;
+    width: 50px;
   }
 
 .wrapper .copy-btn{
