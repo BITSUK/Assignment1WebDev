@@ -105,12 +105,7 @@ body{
   width: calc(100% / 2);
   color: #2c2d2e;
 }
-.options .option:first-child{
-  pointer-events: none;
-}
-.options .option:first-child input{
-  opacity: 0.7;
-}
+
 .options .option input{
   height: 16px;
   width: 16px;
@@ -122,7 +117,7 @@ body{
   color: #2c2d2e;
   padding-left: 0.63rem;
 }
-.wrapper .generate-btn{
+.wrapper .generate-btn {
   width: 0%;
   color: #fff;
   border: none;
@@ -136,7 +131,7 @@ body{
 }
 
 .wrapper .generate-btn img{
-    width: 70px;
+    width: 50px;
   }
 
 .wrapper .copy-btn{

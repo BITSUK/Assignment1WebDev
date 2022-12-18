@@ -4,6 +4,7 @@ copyIcon = document.querySelector(".copy-btn"),
 passwordInput = document.querySelector(".input-box input"),
 passIndicator = document.querySelector(".pass-indicator"),
 generateBtn = document.querySelector(".generate-btn");
+iconImage = document.querySelector(".image");
 
 const characters = { // object of letters, numbers & symbols
     lowercase: "abcdefghijklmnopqrstuvwxyz",
@@ -13,10 +14,16 @@ const characters = { // object of letters, numbers & symbols
 }
 
 const generatePassword = () => {
+
     let staticPassword = "",
     randomPassword = "",
     excludeDuplicate = false,
     passLength = lengthSlider.value;
+   
+    //** Umesh : image animation */
+    iconImage.style.transform = "rotate(90deg)";
+    setTimeout(() => {iconImage.style.transform = "rotate(0deg)",5000});
+    //** End */
 
     options.forEach(option => { // looping through each option's checkbox
         if(option.checked) { // if checkbox is checked
@@ -49,20 +56,34 @@ const generatePassword = () => {
 const updateSlider = () => {
     // passing slider value as counter text
     document.querySelector(".pass-length span").innerText = lengthSlider.value;
-    generatePassword();
+  // Umesh : line commented  generatePassword();
 }
 updateSlider();
 
-const copyPassword = () => {
+// Umesh: function amended
+const CopyPassword = () => {
     navigator.clipboard.writeText(passwordInput.value); // copying random password
-    copyIcon.innerText = "copied"; // changing copy icon to tick
-    copyIcon.style.color = "#4285F4";
-    setTimeout(() => { // after 1500 ms, changing tick icon back to copy
-        copyIcon.innerText = "copied";
-        copyIcon.style.color = "#707070";
-    }, 1500);
+    copyIcon.innerText = "COPIED"; // changing copy icon to tick
+    copyIcon.style.color = "#00ff00";
+    
+    const timeoutPointer = setTimeout(() => { // after 500 ms, changing tick icon back to copy
+                                                copyIcon.innerText = "COPY";
+                                                copyIcon.style.color = "#fff";
+                                            }, 500);
 }
 
-copyIcon.addEventListener("click", copyPassword);
+copyIcon.addEventListener("click", CopyPassword);
 lengthSlider.addEventListener("input", updateSlider);
 generateBtn.addEventListener("click", generatePassword);
+
+function ValidateInput() {
+    var Option1 = document.getElementById("numbers");
+    var Option2 = document.getElementById("lowercase");
+    var Option3 = document.getElementById("uppercase");
+    var Option4 = document.getElementById("symbols");
+
+    if ((Option1.checked == false) & (Option2.checked == false) & (Option3.checked == false) & (Option3.checked == false)) {
+        document.getElementById("numbers").checked = true;
+    }
+
+}
